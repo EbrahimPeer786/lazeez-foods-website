@@ -1,743 +1,767 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lazeez Foods — Authentic Indian Cuisine</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazeez Foods — Authentic Indian Cuisine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* PROFESSIONAL FONT OVERRIDES */
+    body,
+    .nav-links a,
+    .nav-cta,
+    .hero-halaal,
+    .hero-tagline,
+    .section-label,
+    .about-body,
+    .mi-desc,
+    .mi-tag,
+    .cat-tab,
+    .hours-row,
+    .map-link,
+    .footer-desc,
+    .footer-links a,
+    .footer-addr,
+    .footer-note,
+    .footer-bottom,
+    .specials-sub,
+    .btn-primary,
+    .btn-ghost,
+    .catering-item,
+    .allergen-note {
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    .nav-brand,
+    .hero-title,
+    .section-title,
+    .mi-name,
+    .mi-price,
+    .menu-cat-title,
+    .info-title,
+    .footer-logo-name,
+    .specials-title {
+      font-family: 'Playfair Display', serif !important;
+    }
+
+    .hero-script {
+      font-family: 'Inter', sans-serif !important;
+      font-size: clamp(1rem, 2.5vw, 1.35rem) !important;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-brand {
+      font-weight: 600 !important;
+    }
+
+    .hero-title,
+    .section-title,
+    .menu-cat-title,
+    .footer-logo-name,
+    .specials-title {
+      letter-spacing: 0.01em;
+    }
+
+    .mi-name {
+      font-size: 1.12rem !important;
+      font-weight: 600 !important;
+    }
+
+    .mi-price {
+      font-weight: 600 !important;
+    }
+
+    .mi-desc {
+      font-size: 0.78rem !important;
+      line-height: 1.85 !important;
+      opacity: 0.78 !important;
+    }
+
+    .nav-links a {
+      font-size: 0.7rem !important;
+      letter-spacing: 0.14em !important;
+      font-weight: 500;
+    }
+
+    .hero-tagline,
+    .about-body,
+    .map-link,
+    .footer-desc {
+      font-weight: 400;
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="mainNav">
-  <a class="nav-logo-wrap" href="#">
-    <div class="nav-logo-circle">
-      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
-        <circle cx="40" cy="40" r="36" stroke="#9B1C1C" stroke-width="2"/>
-        <circle cx="40" cy="40" r="32" stroke="#D4A847" stroke-width="0.5"/>
-        <line x1="30" y1="22" x2="30" y2="58" stroke="#D4A847" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="30" y1="22" x2="34" y2="31" stroke="#D4A847" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="26" y1="22" x2="26" y2="31" stroke="#D4A847" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="50" y1="22" x2="50" y2="58" stroke="#D4A847" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M46 22 Q50 30 54 22" stroke="#D4A847" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-        <text x="40" y="46" font-family="Georgia,serif" font-size="9" fill="#E8871A" text-anchor="middle" font-style="italic">Lz</text>
-      </svg>
-    </div>
-    <div class="nav-brand">Lazeez Foods<span>Authentic Indian Cuisine</span></div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#info">Visit Us</a></li>
-    <li><a href="#catering">Catering</a></li>
-    <!-- <li><a href="#reserve">Reserve</a></li> -->
-  </ul>
+  <!-- NAV -->
+  <nav id="mainNav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a class="nav-logo-wrap" href="#">
+      <div class="nav-brand">Lazeez Foods<span>Authentic Indian Cuisine</span></div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#info">Visit Us</a></li>
+      <li><a href="#catering">Catering</a></li>
+    </ul>
+
     <div class="nav-contact">
-    <a href="https://wa.me/27723480786" target="_blank" class="nav-cta">
-      WhatsApp: 072 348 0786
-    </a>
-
-    <a href="https://share.google/qbNTFqs2nmSUBr66Y" target="_blank" class="nav-cta">
-      031 463 1069
-    </a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <!-- <div class="hero-bg"></div> -->
-  <!-- <div class="hero-ring" style="width:600px;height:600px;border:1px solid rgba(212,168,71,0.07)"></div>
-  <div class="hero-ring" style="width:800px;height:800px;border:1px solid rgba(155,28,28,0.05);animation-direction:reverse;animation-duration:130s"></div> -->
-
-  <!-- LOGO -->
-    <!-- <div class="logo-container">
-        <img src="./logo.png" alt="Lazeez Foods Logo" class="logo">
-    </div> -->
-  <!-- <div class="hero-logo">
-    <div class="hero-logo-circle">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" width="136" height="136">
-        <circle cx="100" cy="100" r="94" stroke="#9B1C1C" stroke-width="4"/>
-        <circle cx="100" cy="100" r="88" stroke="#D4A847" stroke-width="1"/>
-        <circle cx="100" cy="100" r="82" stroke="#9B1C1C" stroke-width="0.5" stroke-dasharray="3 6"/> -->
-        <!-- Fork -->
-        <!-- <line x1="76" y1="54" x2="76" y2="146" stroke="#D4A847" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="76" y1="54" x2="83" y2="72" stroke="#D4A847" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="69" y1="54" x2="69" y2="72" stroke="#D4A847" stroke-width="2.5" stroke-linecap="round"/> -->
-        <!-- Knife -->
-        <!-- <line x1="124" y1="54" x2="124" y2="146" stroke="#D4A847" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M116 54 Q124 72 132 54" stroke="#D4A847" stroke-width="2.5" fill="none" stroke-linecap="round"/> -->
-        <!-- Text -->
-        <!-- <text x="100" y="96" font-family="Georgia,serif" font-size="22" fill="#E8871A" text-anchor="middle" font-style="italic">Lazeez</text>
-        <text x="100" y="114" font-family="Georgia,serif" font-size="18" fill="#D4A847" text-anchor="middle" font-style="italic">Foods</text>
-        Arc label -->
-        <!-- <path id="botarc" d="M 22,100 A 78,78 0 0,0 178,100" fill="none"/>
-        <text font-family="Arial" font-size="7" fill="#E8871A" letter-spacing="2.5" opacity="0.75">
-          <textPath href="#botarc" startOffset="8%">Authentic   Indian   Cuisine</textPath>
-        </text>
-      </svg>
+      <a href="https://wa.me/27723480786" target="_blank" class="nav-cta">
+        WhatsApp: 072 348 0786
+      </a>
+      <a href="https://share.google/qbNTFqs2nmSUBr66Y" target="_blank" class="nav-cta">
+        031 463 1069
+      </a>
     </div>
-  </div> -->
-  <div class="hero-content">
-    <div class="logo-container">
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="logo-container">
         <img src="./logo.png" alt="Lazeez Foods Logo" class="logo">
-    </div>
+      </div>
 
-    <div class="hero-halaal">✦ Strictly Halaal ✦</div>
-    <h1 class="hero-title">Family Restaurant<br>&amp; <em>Take-Away</em></h1>
-    <p class="hero-script">
-      Where traditions are honoured,<br>
-      flavours are elevated and<br>
-      every moment is made memorable
-    </p>
-    <p class="hero-tagline">Exploring the delights of Indian Food… authentic flavours… timeless taste</p>
+      <div class="hero-halaal">✦ Strictly Halaal ✦</div>
+      <h1 class="hero-title">Family Restaurant<br>&amp; <em>Take-Away</em></h1>
+      <p class="hero-script">
+        Where traditions are honoured,<br>
+        flavours are elevated and<br>
+        every moment is made memorable
+      </p>
+      <p class="hero-tagline">Exploring the delights of Indian Food… authentic flavours… timeless taste</p>
 
-    <div class="hero-btns">
+      <div class="hero-btns">
         <a href="#menu" class="btn-primary">View Full Menu</a>
-    </div>
-    </div>
-  <!-- <div class="hero-content">
-    <div class="hero-halaal">✦ Strictly Halaal ✦</div>
-    <h1 class="hero-title">Family Restaurant<br>&amp; <em>Take-Away</em></h1>
-    <p class="hero-script">Where traditions are honoured,<br>flavours are elevated</p>
-    <p class="hero-tagline">Exploring the delights of Indian Food… authentic flavours… timeless taste</p>
-    <div class="hero-btns">
-      <a href="#menu" class="btn-primary">View Full Menu</a>
-      <a href="#reserve" class="btn-ghost">Book a Table</a> -->
-    <!-- </div>
-  </div> -->
-  <div class="scroll-hint"><div class="sline"></div><span>Scroll</span></div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-strip">
-  <div class="marquee-inner">
-    <span>Strictly Halaal</span><span class="dot">✦</span>
-    <span>Authentic Indian Cuisine</span><span class="dot">✦</span>
-    <span>Dine In &amp; Take Away</span><span class="dot">✦</span>
-    <span>Delivery Available</span><span class="dot">✦</span>
-    <span>Vegan Options Available</span><span class="dot">✦</span>
-    <span>Catering Available</span><span class="dot">✦</span>
-    <span>153 Main Rd, Malvern, Durban</span><span class="dot">✦</span>
-    <span>Call: 031 463 1069</span><span class="dot">✦</span>
-    <span>WhatsApp: 072 348 0786</span><span class="dot">✦</span>
-
-    <span>Strictly Halaal</span><span class="dot">✦</span>
-    <span>Authentic Indian Cuisine</span><span class="dot">✦</span>
-    <span>Dine In &amp; Take Away</span><span class="dot">✦</span>
-    <span>Delivery Available</span><span class="dot">✦</span>
-    <span>Vegan Options Available</span><span class="dot">✦</span>
-    <span>Catering Available</span><span class="dot">✦</span>
-    <span>153 Main Rd, Malvern, Durban</span><span class="dot">✦</span>
-    <span>Call: 031 463 1069</span><span class="dot">✦</span>
-    <span>WhatsApp: 072 348 0786</span><span class="dot">✦</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-visual">
-    <div class="about-img">
-      <img src="images/lazeezfront.jpg" alt="Lazeez Foods Front" class="about-image">
-    </div>
-    <div class="about-badge">"…where spices tell stories"</div>
-  </div>
-  <div class="about-text">
-    <p class="section-label">Welcome to Lazeez Foods</p>
-    <h2 class="section-title">Where <em>Traditions</em><br>Are Honoured</h2>
-    <p class="about-body">At Lazeez Foods, every moment is made memorable. We are a strictly Halaal family restaurant and take-away in the heart of Malvern, Durban — dedicated to authentic Indian cuisine crafted with love, care, and pride.</p>
-    <p class="about-body">From open fire tikka grills to slow-cooked biryanis and traditional curries, every dish is prepared fresh with a signature blend of hand-selected spices that honour timeless culinary heritage.</p>
-    <div class="halaal-badge"><span>✓</span> Strictly Halaal Certified</div>
-    <!-- <div class="about-stats">
-      <div><div class="stat-num">4.3</div><div class="stat-label">Uber Eats</div></div>
-      <div><div class="stat-num">4,187</div><div class="stat-label">Google Reviews</div></div>
-      <div><div class="stat-num">5/5</div><div class="stat-label">Facebook</div></div>
-    </div> -->
-  </div>
-</section>
-
-<!-- MENU -->
-<section class="menu-section" id="menu">
-  <div class="menu-header">
-    <p class="section-label">Our Full Menu</p>
-    <h2 class="section-title">Explore the <em>Flavours</em></h2>
-    <div class="cat-tabs">
-      <button class="cat-tab active" onclick="showTab('breakfast',this)">Breakfast</button>
-      <button class="cat-tab" onclick="showTab('street',this)">Street Food</button>
-      <button class="cat-tab" onclick="showTab('curries',this)">Curries</button>
-      <button class="cat-tab" onclick="showTab('biryani',this)">Biryani</button>
-      <button class="cat-tab" onclick="showTab('grills',this)">Open Fire Grills</button>
-      <button class="cat-tab" onclick="showTab('chinese',this)">Chinese</button>
-      <button class="cat-tab" onclick="showTab('drinks',this)">Drinks &amp; Desserts</button>
-    </div>
-  </div>
-
-  <!-- BREAKFAST -->
-  <div class="menu-panel active" id="tab-breakfast">
-    <div class="menu-cat-title">Breakfast Menu</div>
-    <p class="menu-cat-sub">Opens from 9:30 AM daily · Allergens: Cow's milk, Nuts, Soya, Egg, Shellfish, Fish, Cream</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Sunrise Breakfast</div><div class="mi-price">R 39</div></div><div class="mi-desc">1 Egg, 1 Mutton Sausage, Toast, Grilled Tomato, Chips</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mid-Morning Breakfast</div><div class="mi-price">R 59</div></div><div class="mi-desc">Eggs, Mutton Sausage, Macon, Chips, Toast, Grilled Tomato</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Full House Breakfast</div><div class="mi-price">R 69</div></div><div class="mi-desc">Beef Strips, 1 Egg, Sausage, Macon, Chips, Grilled Tomato, Toast</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Veggie Breakfast</div><div class="mi-price">R 65</div></div><div class="mi-desc">Veg Pattie, Grilled Mushroom, Paneer, Grilled Tomato, Chips, Toast</div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Scrambled on Toast</div><div class="mi-price">R 39</div></div><div class="mi-desc">Plain or Masala Scrambled Eggs, Grilled Tomato, Chips</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Wraps (Breakfast)</div><div class="mi-price">R 65</div></div><div class="mi-desc">Chicken Tikka or Paneer Tikka with Chips</div><div class="mi-tags"><span class="mi-tag veg">🥬Veg Option</span></div></div>
-    </div>
-    <div class="menu-cat-title">Tiny Tummies</div><p class="menu-cat-sub">Kids Menu</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Pops &amp; Chips</div><div class="mi-price">R 39</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Strips &amp; Chips</div><div class="mi-price">R 49</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Poppers &amp; Chips</div><div class="mi-price">R 49</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Cheese Toast &amp; Chips</div><div class="mi-price">R 29</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish Fingers &amp; Chips</div><div class="mi-price">R 49</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Burger &amp; Chips</div><div class="mi-price">R 49</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Alfredo</div><div class="mi-price">R 55</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mac &amp; Cheese</div><div class="mi-price">R 55</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-    </div>
-    <div class="menu-cat-title">Beverages</div><p class="menu-cat-sub">Drinks to start your day</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Cappuccino</div><div class="mi-price">R 25</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Hot Chocolate</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Five Roses Tea</div><div class="mi-price">R 25</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Rooibos Tea</div><div class="mi-price">R 25</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Masala Tea</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Milkshakes</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Soft Drinks (Buddy)</div><div class="mi-price">R 19</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Cappy Juice</div><div class="mi-price">R 25</div></div></div>
-    </div>
-  </div>
-
-  <!-- STREET FOOD -->
-  <div class="menu-panel" id="tab-street">
-    <div class="menu-cat-title">Starters</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Samoosas</div><div class="mi-price">R 40</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Poppers</div><div class="mi-price">R 60</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Aloo Paratha</div><div class="mi-price">R 59</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Cheese Paratha</div><div class="mi-price">R 69</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mince Paratha</div><div class="mi-price">R 79</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Paratha</div><div class="mi-price">R 65</div></div></div>
-    </div>
-    <div class="menu-cat-title">Sandwiches</div><p class="menu-cat-sub">Served with chips</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Cheese &amp; Tomato</div><div class="mi-price">R 29</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chips &amp; Cheese</div><div class="mi-price">R 29</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken &amp; Mayo</div><div class="mi-price">R 59</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Curry</div><div class="mi-price">R 79</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak</div><div class="mi-price">R 65</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak, Egg &amp; Cheese</div><div class="mi-price">R 75</div></div></div>
-    </div>
-    <div class="menu-cat-title">Schwarmas</div><p class="menu-cat-sub">In pita, served with chips</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 75</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak</div><div class="mi-price">R 85</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Lamb</div><div class="mi-price">R 99</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg</div><div class="mi-price">R 59</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-    </div>
-    <div class="menu-cat-title">Wraps</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Beans</div><div class="mi-price">R 35</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mixed Veg</div><div class="mi-price">R 45</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 65</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Tandoori Chicken</div><div class="mi-price">R 75</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton</div><div class="mi-price">R 75</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Kebaab</div><div class="mi-price">R 75</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Curry</div><div class="mi-price">R 65</div></div></div>
-    </div>
-    <div class="menu-cat-title">Burgers</div><p class="menu-cat-sub">Served with chips</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Burger</div><div class="mi-price">R 65</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Cheese Burger</div><div class="mi-price">R 70</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Double Cheese Burger</div><div class="mi-price">R 95</div></div><div class="mi-desc">2 Mutton Patties, 2 Slices of Cheese</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Deluxe Cheese Burger</div><div class="mi-price">R 110</div></div><div class="mi-desc">2 Mutton Patties, Egg, Macon, 2 Slices of Cheese</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Tikka Burger</div><div class="mi-price">R 65</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Tikka Burger</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg Burger</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg Cheese Burger</div><div class="mi-price">R 70</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-    </div>
-    <div class="menu-cat-title">Bunny Chows</div><p class="menu-cat-sub">Served with salad · Q = Quarter · H = Half · F = Full</p>
-    <div class="menu-grid">
-      <div class="menu-item bunny-big">
-        <table class="bunny-table">
-          <tr><th>Item</th><th>Q</th><th>H</th><th>F</th></tr>
-          <tr><td>Mutton</td><td>110</td><td>190</td><td>275</td></tr>
-          <tr><td>Chicken</td><td>95</td><td>120</td><td>180</td></tr>
-          <tr class="vrow"><td>Beans (Broad/Sugar)</td><td>49</td><td>90</td><td>155</td></tr>
-          <tr class="vrow"><td>Mixed Veg</td><td>49</td><td>90</td><td>155</td></tr>
-          <tr><td>Prawn</td><td>145</td><td>170</td><td>240</td></tr>
-          <tr><td>Prawn &amp; Chicken</td><td>145</td><td>165</td><td>235</td></tr>
-          <tr><td>Butter Chicken</td><td>110</td><td>165</td><td>225</td></tr>
-          <tr><td>Kebaab</td><td>110</td><td>185</td><td>265</td></tr>
-          <tr class="vrow"><td>Paneer Tikka Masala</td><td>110</td><td>165</td><td>215</td></tr>
-          <tr class="vrow"><td>Paneer &amp; Peas</td><td>95</td><td>120</td><td>180</td></tr>
-        </table>
       </div>
     </div>
-    <div class="menu-cat-title">Roti Rolls</div><p class="menu-cat-sub">Served with chips</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Beans (Sugar/Broad)</div><div class="mi-price">R 35</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Kebab</div><div class="mi-price">R 65</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mixed Veg</div><div class="mi-price">R 35</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton</div><div class="mi-price">R 75</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 65</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak</div><div class="mi-price">R 75</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn</div><div class="mi-price">R 75</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer</div><div class="mi-price">R 75</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+
+    <div class="scroll-hint">
+      <div class="sline"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- WEEKLY SPECIALS -->
+  <section class="weekly-specials">
+    <div class="specials-container">
+      <h2 class="specials-title">🔥 Weekly Specials</h2>
+      <p class="specials-sub">Limited time deals — don’t miss out!</p>
+
+      <img src="images/weekly-deals.png" alt="Weekly Deals" class="specials-image">
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span>Strictly Halaal</span><span class="dot">✦</span>
+      <span>Authentic Indian Cuisine</span><span class="dot">✦</span>
+      <span>Dine In &amp; Take Away</span><span class="dot">✦</span>
+      <span>Delivery Available</span><span class="dot">✦</span>
+      <span>Vegan Options Available</span><span class="dot">✦</span>
+      <span>Catering Available</span><span class="dot">✦</span>
+      <span>153 Main Rd, Malvern, Durban</span><span class="dot">✦</span>
+      <span>Call: 031 463 1069</span><span class="dot">✦</span>
+      <span>WhatsApp: 072 348 0786</span><span class="dot">✦</span>
+
+      <span>Strictly Halaal</span><span class="dot">✦</span>
+      <span>Authentic Indian Cuisine</span><span class="dot">✦</span>
+      <span>Dine In &amp; Take Away</span><span class="dot">✦</span>
+      <span>Delivery Available</span><span class="dot">✦</span>
+      <span>Vegan Options Available</span><span class="dot">✦</span>
+      <span>Catering Available</span><span class="dot">✦</span>
+      <span>153 Main Rd, Malvern, Durban</span><span class="dot">✦</span>
+      <span>Call: 031 463 1069</span><span class="dot">✦</span>
+      <span>WhatsApp: 072 348 0786</span><span class="dot">✦</span>
     </div>
   </div>
 
-  <!-- CURRIES -->
-  <div class="menu-panel" id="tab-curries">
-    <div class="menu-cat-title">Paneer Selection</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Tikka Grill</div><div class="mi-price">R 99</div></div><div class="mi-desc">Includes chips, salad &amp; roti</div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chilli Paneer</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Tikka Masala</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Spinach &amp; Paneer</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Malai Kofta</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Makhni</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Butter Paneer</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-visual">
+      <div class="about-img">
+        <img src="images/lazeezfront.jpg" alt="Lazeez Foods Front" class="about-image">
+      </div>
+      <div class="about-badge">"…where spices tell stories"</div>
     </div>
-    <div class="menu-cat-title">Oriental Chicken</div><p class="menu-cat-sub">Med / Hot / Extra Hot</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Tikka Masala (Boneless)</div><div class="mi-price">R 125</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Karahi</div><div class="mi-price">R 115</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Butter Chicken</div><div class="mi-price">R 115</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Korma (Delhi Style)</div><div class="mi-price">R 115</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Jal Frezi</div><div class="mi-price">R 115</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Vindaloo</div><div class="mi-price">R 115</div></div><div class="mi-tags"><span class="mi-tag hot">🌶️Extra Hot Available</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Shi Korma</div><div class="mi-price">R 115</div></div><div class="mi-desc">Cream &amp; Cashew Sauce</div></div>
+    <div class="about-text">
+      <p class="section-label">Welcome to Lazeez Foods</p>
+      <h2 class="section-title">Where <em>Traditions</em><br>Are Honoured</h2>
+      <p class="about-body">At Lazeez Foods, every moment is made memorable. We are a strictly Halaal family restaurant and take-away in the heart of Malvern, Durban — dedicated to authentic Indian cuisine crafted with love, care, and pride.</p>
+      <p class="about-body">From open fire tikka grills to slow-cooked biryanis and traditional curries, every dish is prepared fresh with a signature blend of hand-selected spices that honour timeless culinary heritage.</p>
+      <div class="halaal-badge"><span>✓</span> Strictly Halaal Certified</div>
     </div>
-    <div class="menu-cat-title">Oriental Mutton</div><p class="menu-cat-sub">Med / Hot / Extra Hot</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Korma (Delhi Style)</div><div class="mi-price">R 120</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Masala</div><div class="mi-price">R 120</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Karahi</div><div class="mi-price">R 120</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Rogan Josh</div><div class="mi-price">R 120</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Vindaloo</div><div class="mi-price">R 120</div></div><div class="mi-tags"><span class="mi-tag hot">🌶️Extra Hot Available</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Lamb Shi Korma</div><div class="mi-price">R 120</div></div></div>
-    </div>
-    <div class="menu-cat-title">Traditional</div><p class="menu-cat-sub">Served with 2 rotis</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Beans (Sugar/Broad)</div><div class="mi-price">R 49</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mixed Veg</div><div class="mi-price">R 49</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Aloo</div><div class="mi-price">R 115</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Aloo</div><div class="mi-price">R 79</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mince</div><div class="mi-price">R 99</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chops Chutney</div><div class="mi-price">R 150</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Kebaab Chutney</div><div class="mi-price">R 120</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Trotters &amp; Beans</div><div class="mi-price">R 115</div></div></div>
-    </div>
-    <div class="menu-cat-title">Vegetarian Curries</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chana Masala</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Dhall Makhni</div><div class="mi-price">R 75</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mushroom Karahi</div><div class="mi-price">R 75</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Aloo Matar (Peas)</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Karahi Mix Veg</div><div class="mi-price">R 85</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Dhall Fry</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Masoor Dhall</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-    </div>
-    <div class="menu-cat-title">Thali</div><p class="menu-cat-sub">Three Curries, 1 Plain Naan + Rice</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg Thali</div><div class="mi-price">R 180</div></div><div class="mi-desc">Paneer Tikka Masala, Beans Curry, Mixed Veg</div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Non-Veg Thali</div><div class="mi-price">R 280</div></div><div class="mi-desc">Mutton Curry, Chicken Curry, Butter Chicken</div></div>
-    </div>
-    <div class="menu-cat-title">Seafood</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish Curry (Kingklip)</div><div class="mi-price">R 135</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Bombay Fish Curry</div><div class="mi-price">R 135</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish Masala (Kingklip)</div><div class="mi-price">R 135</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn Curry</div><div class="mi-price">R 170</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Chicken</div><div class="mi-price">R 155</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn Karahi</div><div class="mi-price">R 170</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Malai Prawn</div><div class="mi-price">R 170</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Malai Fish</div><div class="mi-price">R 170</div></div></div>
-    </div>
-  </div>
+  </section>
 
-  <!-- BIRYANI -->
-  <div class="menu-panel" id="tab-biryani">
-    <div class="menu-cat-title">Biryani</div><p class="menu-cat-sub">Served with salad &amp; sourmilk</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton</div><div class="mi-price">R 120</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 110</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Vegetable</div><div class="mi-price">R 70</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn</div><div class="mi-price">R 175</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Chicken</div><div class="mi-price">R 155</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Crabsticks</div><div class="mi-price">R 155</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Tikka</div><div class="mi-price">R 155</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish (Kingklip)</div><div class="mi-price">R 155</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Handi (Fish, Prawn, Chicken)</div><div class="mi-price">R 195</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Pulao</div><div class="mi-price">R 90</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Pulao</div><div class="mi-price">R 110</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="menu-header">
+      <p class="section-label">Our Full Menu</p>
+      <h2 class="section-title">Explore the <em>Flavours</em></h2>
+      <div class="cat-tabs">
+        <button class="cat-tab active" onclick="showTab('breakfast',this)">Breakfast</button>
+        <button class="cat-tab" onclick="showTab('street',this)">Street Food</button>
+        <button class="cat-tab" onclick="showTab('curries',this)">Curries</button>
+        <button class="cat-tab" onclick="showTab('biryani',this)">Biryani</button>
+        <button class="cat-tab" onclick="showTab('grills',this)">Open Fire Grills</button>
+        <button class="cat-tab" onclick="showTab('chinese',this)">Chinese</button>
+        <button class="cat-tab" onclick="showTab('drinks',this)">Drinks &amp; Desserts</button>
+      </div>
     </div>
-    <div class="menu-cat-title">More Rice</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Savoury Rice</div><div class="mi-price">R 45</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Plain Basmathi</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Plain Tastic</div><div class="mi-price">R 25</div></div></div>
-    </div>
-  </div>
 
-  <!-- GRILLS -->
-  <div class="menu-panel" id="tab-grills">
-    <div class="menu-cat-title">Chicken on the Grill</div><p class="menu-cat-sub">Signature blend of over 17 hand-selected spices</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Quarter Leg</div><div class="mi-price">R 69</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Quarter Breast</div><div class="mi-price">R 79</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Half Chicken Tikka</div><div class="mi-price">R 109</div></div><div class="mi-desc">Chips, 2 Rotis, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Full Chicken Tikka</div><div class="mi-price">R 189</div></div><div class="mi-desc">2 Leg, 2 Breast, 4 Rotis, 4 Sauce, Large Chips &amp; Salad</div></div>
-    </div>
-    <div class="menu-cat-title">Grill for One</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Seekh Kebaab</div><div class="mi-price">R 99</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Boti</div><div class="mi-price">R 95</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak Boti</div><div class="mi-price">R 95</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Lamb Tikka Chops</div><div class="mi-price">R 130</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Lamb BBQ Chops</div><div class="mi-price">R 130</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Kingklip &amp; Prawns</div><div class="mi-price">R 245</div></div><div class="mi-desc">250g Kingklip, 6 tiger prawns in garlic/lemon butter. Sweet chilli lime or tartare sauce</div></div>
-    </div>
-    <div class="menu-cat-title">Family Grills</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Tandoori Platter</div><div class="mi-price">R 155</div></div><div class="mi-desc">4 Tiger Prawns, Quarter Leg Tikka, 1 Roti, Chips, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Mixed Grill</div><div class="mi-price">R 165</div></div><div class="mi-desc">Quarter Tikka Leg, 2x Chicken Boti, 1x Seekh Kebab, 1x Lamb Chops, Roti, Chips, Salad &amp; Sauce</div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Family Pack</div><div class="mi-price">R 350</div></div><div class="mi-desc">2 Legs, 2 Breasts, 3 Chicken Boti, 3 Steak Boti, Seekh Kebab, 2 Lamb Chops, 4 Rotis, Chips, Salad &amp; Sauce</div></div>
-    </div>
-    <div class="menu-cat-title">Tandoori Naans</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Roti</div><div class="mi-price">R 6</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Plain Naan</div><div class="mi-price">R 15</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Butter Naan</div><div class="mi-price">R 25</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Garlic Naan</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Sweet Naan</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Roghni Naan</div><div class="mi-price">R 30</div></div></div>
-    </div>
-    <div class="menu-cat-title">Fries</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Medium Fries</div><div class="mi-price">R 30</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Jumbo Fries</div><div class="mi-price">R 50</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Masala Fries</div><div class="mi-price">R 60</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish &amp; Chips</div><div class="mi-price">R 65</div></div></div>
-    </div>
-  </div>
-
-  <!-- CHINESE -->
-  <div class="menu-panel" id="tab-chinese">
-    <div class="menu-cat-title">Zhōngguó cài</div><p class="menu-cat-sub">A Fusion of Indian &amp; Chinese</p>
-    <div class="menu-cat-title" style="font-size:1.5rem;margin-top:28px">Fried Rice</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Fried Rice</div><div class="mi-price">R 90</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Egg Fried Rice</div><div class="mi-price">R 70</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg Fried Rice</div><div class="mi-price">R 70</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Beef Chilli Dry</div><div class="mi-price">R 100</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Chilli Dry</div><div class="mi-price">R 100</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn, Chicken &amp; Steak</div><div class="mi-price">R 130</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn</div><div class="mi-price">R 170</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Chicken</div><div class="mi-price">R 155</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Crab Sticks</div><div class="mi-price">R 165</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
-    </div>
-    <div class="menu-cat-title" style="font-size:1.5rem">Chow-Mein</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 99</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Tikka Chicken</div><div class="mi-price">R 110</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Beef</div><div class="mi-price">R 130</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg</div><div class="mi-price">R 69</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn</div><div class="mi-price">R 175</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Chicken</div><div class="mi-price">R 155</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer</div><div class="mi-price">R 130</div></div><div class="mi-tags"><span class="mi-tag new">New</span><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Crab Sticks</div><div class="mi-price">R 165</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
-    </div>
-    <div class="menu-cat-title" style="font-size:1.5rem">Manchurian</div><p class="menu-cat-sub">A fusion of Indian &amp; Chinese… with a hint of chilli</p>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 99</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Beef</div><div class="mi-price">R 105</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Sweet &amp; Sour Chicken</div><div class="mi-price">R 99</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Vegetarian</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer</div><div class="mi-price">R 105</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-    </div>
-  </div>
-
-  <!-- DRINKS -->
-  <div class="menu-panel" id="tab-drinks">
-    <div class="menu-cat-title">Desserts</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Soji</div><div class="mi-price">R 40</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Kheer</div><div class="mi-price">R 40</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Bombay Crush (with China grass)</div><div class="mi-price">R 45</div></div></div>
-    </div>
-    <div class="menu-cat-title">Milkshakes</div>
-      <p class="menu-cat-sub">All milkshakes R35</p>
-
+    <!-- BREAKFAST -->
+    <div class="menu-panel active" id="tab-breakfast">
+      <div class="menu-cat-title">Breakfast Menu</div>
+      <p class="menu-cat-sub">Opens from 9:30 AM daily · Allergens: Cow's milk, Nuts, Soya, Egg, Shellfish, Fish, Cream</p>
       <div class="menu-grid">
-        <div class="menu-item">
-          <div class="mi-header">
-            <div class="mi-name">Strawberry</div>
-            <div class="mi-price">R 35</div>
-          </div>
-        </div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Sunrise Breakfast</div><div class="mi-price">R 39</div></div><div class="mi-desc">1 Egg, 1 Mutton Sausage, Toast, Grilled Tomato, Chips</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mid-Morning Breakfast</div><div class="mi-price">R 59</div></div><div class="mi-desc">Eggs, Mutton Sausage, Macon, Chips, Toast, Grilled Tomato</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Full House Breakfast</div><div class="mi-price">R 69</div></div><div class="mi-desc">Beef Strips, 1 Egg, Sausage, Macon, Chips, Grilled Tomato, Toast</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Veggie Breakfast</div><div class="mi-price">R 65</div></div><div class="mi-desc">Veg Pattie, Grilled Mushroom, Paneer, Grilled Tomato, Chips, Toast</div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Scrambled on Toast</div><div class="mi-price">R 39</div></div><div class="mi-desc">Plain or Masala Scrambled Eggs, Grilled Tomato, Chips</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Wraps (Breakfast)</div><div class="mi-price">R 65</div></div><div class="mi-desc">Chicken Tikka or Paneer Tikka with Chips</div><div class="mi-tags"><span class="mi-tag veg">🥬Veg Option</span></div></div>
+      </div>
 
-        <div class="menu-item">
-          <div class="mi-header">
-            <div class="mi-name">Lime</div>
-            <div class="mi-price">R 35</div>
-          </div>
-        </div>
+      <div class="menu-cat-title">Tiny Tummies</div>
+      <p class="menu-cat-sub">Kids Menu</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Pops &amp; Chips</div><div class="mi-price">R 39</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Strips &amp; Chips</div><div class="mi-price">R 49</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Poppers &amp; Chips</div><div class="mi-price">R 49</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Cheese Toast &amp; Chips</div><div class="mi-price">R 29</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish Fingers &amp; Chips</div><div class="mi-price">R 49</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Burger &amp; Chips</div><div class="mi-price">R 49</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Alfredo</div><div class="mi-price">R 55</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mac &amp; Cheese</div><div class="mi-price">R 55</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+      </div>
 
-        <div class="menu-item">
-          <div class="mi-header">
-            <div class="mi-name">Banana</div>
-            <div class="mi-price">R 35</div>
-          </div>
-        </div>
+      <div class="menu-cat-title">Beverages</div>
+      <p class="menu-cat-sub">Drinks to start your day</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Cappuccino</div><div class="mi-price">R 25</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Hot Chocolate</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Five Roses Tea</div><div class="mi-price">R 25</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Rooibos Tea</div><div class="mi-price">R 25</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Masala Tea</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Milkshakes</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Soft Drinks (Buddy)</div><div class="mi-price">R 19</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Cappy Juice</div><div class="mi-price">R 25</div></div></div>
+      </div>
+    </div>
 
-        <div class="menu-item">
-          <div class="mi-header">
-            <div class="mi-name">Chocolate</div>
-            <div class="mi-price">R 35</div>
-          </div>
-        </div>
+    <!-- STREET FOOD -->
+    <div class="menu-panel" id="tab-street">
+      <div class="menu-cat-title">Starters</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Samoosas</div><div class="mi-price">R 40</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Poppers</div><div class="mi-price">R 60</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Aloo Paratha</div><div class="mi-price">R 59</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Cheese Paratha</div><div class="mi-price">R 69</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mince Paratha</div><div class="mi-price">R 79</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Paratha</div><div class="mi-price">R 65</div></div></div>
+      </div>
 
-        <div class="menu-item">
-          <div class="mi-header">
-            <div class="mi-name">Salted Caramel</div>
-            <div class="mi-price">R 35</div>
-          </div>
-        </div>
+      <div class="menu-cat-title">Sandwiches</div>
+      <p class="menu-cat-sub">Served with chips</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Cheese &amp; Tomato</div><div class="mi-price">R 29</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chips &amp; Cheese</div><div class="mi-price">R 29</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken &amp; Mayo</div><div class="mi-price">R 59</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Curry</div><div class="mi-price">R 79</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak</div><div class="mi-price">R 65</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak, Egg &amp; Cheese</div><div class="mi-price">R 75</div></div></div>
+      </div>
 
-        <div class="menu-item">
-          <div class="mi-header">
-            <div class="mi-name">Unicorn</div>
-            <div class="mi-price">R 35</div>
-          </div>
-        </div>
+      <div class="menu-cat-title">Schwarmas</div>
+      <p class="menu-cat-sub">In pita, served with chips</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 75</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak</div><div class="mi-price">R 85</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Lamb</div><div class="mi-price">R 99</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg</div><div class="mi-price">R 59</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+      </div>
 
-        <div class="menu-item">
-          <div class="mi-header">
-            <div class="mi-name">Turkish Delight</div>
-            <div class="mi-price">R 35</div>
-          </div>
+      <div class="menu-cat-title">Wraps</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Beans</div><div class="mi-price">R 35</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mixed Veg</div><div class="mi-price">R 45</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 65</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Tandoori Chicken</div><div class="mi-price">R 75</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton</div><div class="mi-price">R 75</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Kebaab</div><div class="mi-price">R 75</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Curry</div><div class="mi-price">R 65</div></div></div>
+      </div>
+
+      <div class="menu-cat-title">Burgers</div>
+      <p class="menu-cat-sub">Served with chips</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Burger</div><div class="mi-price">R 65</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Cheese Burger</div><div class="mi-price">R 70</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Double Cheese Burger</div><div class="mi-price">R 95</div></div><div class="mi-desc">2 Mutton Patties, 2 Slices of Cheese</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Deluxe Cheese Burger</div><div class="mi-price">R 110</div></div><div class="mi-desc">2 Mutton Patties, Egg, Macon, 2 Slices of Cheese</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Tikka Burger</div><div class="mi-price">R 65</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Tikka Burger</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg Burger</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg Cheese Burger</div><div class="mi-price">R 70</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+      </div>
+
+      <div class="menu-cat-title">Bunny Chows</div>
+      <p class="menu-cat-sub">Served with salad · Q = Quarter · H = Half · F = Full</p>
+      <div class="menu-grid">
+        <div class="menu-item bunny-big">
+          <table class="bunny-table">
+            <tr><th>Item</th><th>Q</th><th>H</th><th>F</th></tr>
+            <tr><td>Mutton</td><td>110</td><td>190</td><td>275</td></tr>
+            <tr><td>Chicken</td><td>95</td><td>120</td><td>180</td></tr>
+            <tr class="vrow"><td>Beans (Broad/Sugar)</td><td>49</td><td>90</td><td>155</td></tr>
+            <tr class="vrow"><td>Mixed Veg</td><td>49</td><td>90</td><td>155</td></tr>
+            <tr><td>Prawn</td><td>145</td><td>170</td><td>240</td></tr>
+            <tr><td>Prawn &amp; Chicken</td><td>145</td><td>165</td><td>235</td></tr>
+            <tr><td>Butter Chicken</td><td>110</td><td>165</td><td>225</td></tr>
+            <tr><td>Kebaab</td><td>110</td><td>185</td><td>265</td></tr>
+            <tr class="vrow"><td>Paneer Tikka Masala</td><td>110</td><td>165</td><td>215</td></tr>
+            <tr class="vrow"><td>Paneer &amp; Peas</td><td>95</td><td>120</td><td>180</td></tr>
+          </table>
         </div>
       </div>
-    <div class="menu-cat-title" style="font-size:1.5rem">Mocktails</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Blue Lagoon</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Virgin Mojito</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Kola Tonic</div><div class="mi-price">R 30</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Pina Colada</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Strawberry Daiquiri</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Cosmo Crush</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Passion Fruit &amp; Lemonade</div><div class="mi-price">R 32</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Blueberry &amp; Lemonade</div><div class="mi-price">R 42</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Watermelon &amp; Lemonade</div><div class="mi-price">R 42</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Kola Tonic &amp; Lemonade</div><div class="mi-price">R 32</div></div></div>
+
+      <div class="menu-cat-title">Roti Rolls</div>
+      <p class="menu-cat-sub">Served with chips</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Beans (Sugar/Broad)</div><div class="mi-price">R 35</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Kebab</div><div class="mi-price">R 65</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mixed Veg</div><div class="mi-price">R 35</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton</div><div class="mi-price">R 75</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 65</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak</div><div class="mi-price">R 75</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn</div><div class="mi-price">R 75</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer</div><div class="mi-price">R 75</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+      </div>
     </div>
-    <div class="menu-cat-title" style="font-size:1.5rem">Hot Beverages</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Rooibos Tea</div><div class="mi-price">R 25</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Five Roses Tea</div><div class="mi-price">R 25</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Masala Tea</div><div class="mi-price">R 40</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Hot Chocolate</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Cappuccino</div><div class="mi-price">R 35</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Coffee</div><div class="mi-price">R 25</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Chai Latte</div><div class="mi-price">R 35</div></div></div>
+
+    <!-- CURRIES -->
+    <div class="menu-panel" id="tab-curries">
+      <div class="menu-cat-title">Paneer Selection</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Tikka Grill</div><div class="mi-price">R 99</div></div><div class="mi-desc">Includes chips, salad &amp; roti</div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chilli Paneer</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Tikka Masala</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Spinach &amp; Paneer</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Malai Kofta</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Makhni</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Butter Paneer</div><div class="mi-price">R 89</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+      </div>
+
+      <div class="menu-cat-title">Oriental Chicken</div>
+      <p class="menu-cat-sub">Med / Hot / Extra Hot</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Tikka Masala (Boneless)</div><div class="mi-price">R 125</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Karahi</div><div class="mi-price">R 115</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Butter Chicken</div><div class="mi-price">R 115</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Korma (Delhi Style)</div><div class="mi-price">R 115</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Jal Frezi</div><div class="mi-price">R 115</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Vindaloo</div><div class="mi-price">R 115</div></div><div class="mi-tags"><span class="mi-tag hot">🌶️Extra Hot Available</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Shi Korma</div><div class="mi-price">R 115</div></div><div class="mi-desc">Cream &amp; Cashew Sauce</div></div>
+      </div>
+
+      <div class="menu-cat-title">Oriental Mutton</div>
+      <p class="menu-cat-sub">Med / Hot / Extra Hot</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Korma (Delhi Style)</div><div class="mi-price">R 120</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Masala</div><div class="mi-price">R 120</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Karahi</div><div class="mi-price">R 120</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Rogan Josh</div><div class="mi-price">R 120</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Vindaloo</div><div class="mi-price">R 120</div></div><div class="mi-tags"><span class="mi-tag hot">🌶️Extra Hot Available</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Lamb Shi Korma</div><div class="mi-price">R 120</div></div></div>
+      </div>
+
+      <div class="menu-cat-title">Traditional</div>
+      <p class="menu-cat-sub">Served with 2 rotis</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Beans (Sugar/Broad)</div><div class="mi-price">R 49</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mixed Veg</div><div class="mi-price">R 49</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Aloo</div><div class="mi-price">R 115</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Aloo</div><div class="mi-price">R 79</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mince</div><div class="mi-price">R 99</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chops Chutney</div><div class="mi-price">R 150</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Kebaab Chutney</div><div class="mi-price">R 120</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Trotters &amp; Beans</div><div class="mi-price">R 115</div></div></div>
+      </div>
+
+      <div class="menu-cat-title">Vegetarian Curries</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chana Masala</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Dhall Makhni</div><div class="mi-price">R 75</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mushroom Karahi</div><div class="mi-price">R 75</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Aloo Matar (Peas)</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Karahi Mix Veg</div><div class="mi-price">R 85</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Dhall Fry</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Masoor Dhall</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+      </div>
+
+      <div class="menu-cat-title">Thali</div>
+      <p class="menu-cat-sub">Three Curries, 1 Plain Naan + Rice</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg Thali</div><div class="mi-price">R 180</div></div><div class="mi-desc">Paneer Tikka Masala, Beans Curry, Mixed Veg</div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Non-Veg Thali</div><div class="mi-price">R 280</div></div><div class="mi-desc">Mutton Curry, Chicken Curry, Butter Chicken</div></div>
+      </div>
+
+      <div class="menu-cat-title">Seafood</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish Curry (Kingklip)</div><div class="mi-price">R 135</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Bombay Fish Curry</div><div class="mi-price">R 135</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish Masala (Kingklip)</div><div class="mi-price">R 135</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn Curry</div><div class="mi-price">R 170</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Chicken</div><div class="mi-price">R 155</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn Karahi</div><div class="mi-price">R 170</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Malai Prawn</div><div class="mi-price">R 170</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Malai Fish</div><div class="mi-price">R 170</div></div></div>
+      </div>
     </div>
-    <div class="menu-cat-title" style="font-size:1.5rem">Soft Drinks</div>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Buddy (Coke/Fanta/Sprite/Crème Soda)</div><div class="mi-price">R 19</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">2 Litre Colddrink</div><div class="mi-price">R 39</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Appletiser 330ml</div><div class="mi-price">R 29</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Grapetiser 330ml</div><div class="mi-price">R 29</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Still Water 500ml</div><div class="mi-price">R 13</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Still Water 1.5L</div><div class="mi-price">R 26</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Cappy Juice</div><div class="mi-price">R 25</div></div></div>
-      <div class="menu-item"><div class="mi-header"><div class="mi-name">Energy Drink</div><div class="mi-price">R 30</div></div></div>
+
+    <!-- BIRYANI -->
+    <div class="menu-panel" id="tab-biryani">
+      <div class="menu-cat-title">Biryani</div>
+      <p class="menu-cat-sub">Served with salad &amp; sourmilk</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton</div><div class="mi-price">R 120</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 110</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Vegetable</div><div class="mi-price">R 70</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn</div><div class="mi-price">R 175</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Chicken</div><div class="mi-price">R 155</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Crabsticks</div><div class="mi-price">R 155</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer Tikka</div><div class="mi-price">R 155</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish (Kingklip)</div><div class="mi-price">R 155</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Handi (Fish, Prawn, Chicken)</div><div class="mi-price">R 195</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Pulao</div><div class="mi-price">R 90</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mutton Pulao</div><div class="mi-price">R 110</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
+      </div>
+
+      <div class="menu-cat-title">More Rice</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Savoury Rice</div><div class="mi-price">R 45</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Plain Basmathi</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Plain Tastic</div><div class="mi-price">R 25</div></div></div>
+      </div>
     </div>
-    <p style="text-align:center;font-size:0.65rem;letter-spacing:0.1em;color:var(--cream);opacity:0.32;padding:26px 40px">★ Strictly no alcohol served or allowed on the premises. Outside beverages are not permitted.</p>
-  </div>
 
-  <p class="allergen-note">Allergens: Cow's milk · Nuts · Soya · Egg · Shellfish (crustaceans) · Fish · Cream &nbsp;|&nbsp; All products and prices subject to change without notice.</p>
-</section>
+    <!-- GRILLS -->
+    <div class="menu-panel" id="tab-grills">
+      <div class="menu-cat-title">Chicken on the Grill</div>
+      <p class="menu-cat-sub">Signature blend of over 17 hand-selected spices</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Quarter Leg</div><div class="mi-price">R 79</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Quarter Breast</div><div class="mi-price">R 89</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Half Chicken Tikka</div><div class="mi-price">R 119</div></div><div class="mi-desc">Chips, 2 Rotis, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Full Chicken Tikka</div><div class="mi-price">R 199</div></div><div class="mi-desc">2 Leg, 2 Breast, 4 Rotis, 4 Sauce, Large Chips &amp; Salad</div></div>
+      </div>
 
-<!-- GALLERY -->
-<!-- ── GALLERY ── paste this block in place of your existing <section class="gallery"> ── -->
-<!-- 
-  KEY CHANGE: every <img> now uses  data-src="..."  instead of  src="..."
-  The new script.js swaps them in only when each card scrolls near the viewport.
-  This means the browser won't try to download all 22 photos at page load.
--->
+      <div class="menu-cat-title">Grill for One</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Seekh Kebaab</div><div class="mi-price">R 99</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Boti</div><div class="mi-price">R 95</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Steak Boti</div><div class="mi-price">R 95</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Lamb Tikka Chops</div><div class="mi-price">R 130</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Lamb BBQ Chops</div><div class="mi-price">R 130</div></div><div class="mi-desc">Chips, 1 Roti, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Kingklip &amp; Prawns</div><div class="mi-price">R 245</div></div><div class="mi-desc">250g Kingklip, 6 tiger prawns in garlic/lemon butter. Sweet chilli lime or tartare sauce</div></div>
+      </div>
 
-<section class="gallery">
-  <div class="gallery-track">
+      <div class="menu-cat-title">Family Grills</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Tandoori Platter</div><div class="mi-price">R 155</div></div><div class="mi-desc">4 Tiger Prawns, Quarter Leg Tikka, 1 Roti, Chips, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Mixed Grill</div><div class="mi-price">R 165</div></div><div class="mi-desc">Quarter Tikka Leg, 2x Chicken Boti, 1x Seekh Kebab, 1x Lamb Chops, Roti, Chips, Salad &amp; Sauce</div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Family Pack</div><div class="mi-price">R 350</div></div><div class="mi-desc">2 Legs, 2 Breasts, 3 Chicken Boti, 3 Steak Boti, Seekh Kebab, 2 Lamb Chops, 4 Rotis, Chips, Salad &amp; Sauce</div></div>
+      </div>
 
-    <div class="gallery-card"><img data-src="images/DSCF5801.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF5817.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF5847.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF5860.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF5898.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF5924.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF5935.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF5947.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF5993.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6036.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6048.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6091.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6109.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6132.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6149.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6239.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6249.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6296.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6337.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6396.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6464.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
-    <div class="gallery-card"><img data-src="images/DSCF6515.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="menu-cat-title">Tandoori Naans</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Roti</div><div class="mi-price">R 6</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Plain Naan</div><div class="mi-price">R 15</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Butter Naan</div><div class="mi-price">R 25</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Garlic Naan</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Sweet Naan</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Roghni Naan</div><div class="mi-price">R 30</div></div></div>
+      </div>
 
-  </div>
-</section>
+      <div class="menu-cat-title">Fries</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Medium Fries</div><div class="mi-price">R 30</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Jumbo Fries</div><div class="mi-price">R 50</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Masala Fries</div><div class="mi-price">R 60</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Fish &amp; Chips</div><div class="mi-price">R 65</div></div></div>
+      </div>
+    </div>
 
-<!-- INFO -->
-<section class="info-strip" id="info">
-  <div class="info-card">
-    <a href="https://maps.app.goo.gl/s5Pqvpo5Aerh6bhk6" target="_blank" class="map-icon">📍</a>
-    <div class="info-title">Find Us</div>
-    <a href="https://maps.app.goo.gl/s5Pqvpo5Aerh6bhk6" target="_blank" class="map-link">153 Main Rd, Malvern<br>Durban, 4055<br>KwaZulu-Natal, South Africa</a>
-  </div>
+    <!-- CHINESE -->
+    <div class="menu-panel" id="tab-chinese">
+      <div class="menu-cat-title">Zhōngguó cài</div>
+      <p class="menu-cat-sub">A Fusion of Indian &amp; Chinese</p>
+
+      <div class="menu-cat-title" style="font-size:1.5rem;margin-top:28px">Fried Rice</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Fried Rice</div><div class="mi-price">R 90</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Egg Fried Rice</div><div class="mi-price">R 70</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg Fried Rice</div><div class="mi-price">R 70</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Beef Chilli Dry</div><div class="mi-price">R 100</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken Chilli Dry</div><div class="mi-price">R 100</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn, Chicken &amp; Steak</div><div class="mi-price">R 130</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn</div><div class="mi-price">R 170</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Chicken</div><div class="mi-price">R 155</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Crab Sticks</div><div class="mi-price">R 165</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
+      </div>
+
+      <div class="menu-cat-title" style="font-size:1.5rem">Chow-Mein</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 99</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Tikka Chicken</div><div class="mi-price">R 110</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Beef</div><div class="mi-price">R 130</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Veg</div><div class="mi-price">R 69</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn</div><div class="mi-price">R 175</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Chicken</div><div class="mi-price">R 155</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer</div><div class="mi-price">R 130</div></div><div class="mi-tags"><span class="mi-tag new">New</span><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Prawn &amp; Crab Sticks</div><div class="mi-price">R 165</div></div><div class="mi-tags"><span class="mi-tag new">New</span></div></div>
+      </div>
+
+      <div class="menu-cat-title" style="font-size:1.5rem">Manchurian</div>
+      <p class="menu-cat-sub">A fusion of Indian &amp; Chinese… with a hint of chilli</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chicken</div><div class="mi-price">R 99</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Beef</div><div class="mi-price">R 105</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Sweet &amp; Sour Chicken</div><div class="mi-price">R 99</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Vegetarian</div><div class="mi-price">R 65</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegan</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Paneer</div><div class="mi-price">R 105</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-panel" id="tab-drinks">
+      <div class="menu-cat-title">Desserts</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Soji</div><div class="mi-price">R 40</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Kheer</div><div class="mi-price">R 40</div></div><div class="mi-tags"><span class="mi-tag veg">🥬Vegetarian</span></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Bombay Crush (with China grass)</div><div class="mi-price">R 45</div></div></div>
+      </div>
+
+      <div class="menu-cat-title">Milkshakes</div>
+      <p class="menu-cat-sub">All milkshakes R35</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Strawberry</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Lime</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Banana</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chocolate</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Salted Caramel</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Unicorn</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Turkish Delight</div><div class="mi-price">R 35</div></div></div>
+      </div>
+
+      <div class="menu-cat-title" style="font-size:1.5rem">Mocktails</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Blue Lagoon</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Virgin Mojito</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Kola Tonic</div><div class="mi-price">R 30</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Pina Colada</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Strawberry Daiquiri</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Cosmo Crush</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Passion Fruit &amp; Lemonade</div><div class="mi-price">R 32</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Blueberry &amp; Lemonade</div><div class="mi-price">R 42</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Watermelon &amp; Lemonade</div><div class="mi-price">R 42</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Kola Tonic &amp; Lemonade</div><div class="mi-price">R 32</div></div></div>
+      </div>
+
+      <div class="menu-cat-title" style="font-size:1.5rem">Hot Beverages</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Rooibos Tea</div><div class="mi-price">R 25</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Five Roses Tea</div><div class="mi-price">R 25</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Masala Tea</div><div class="mi-price">R 40</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Hot Chocolate</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Cappuccino</div><div class="mi-price">R 35</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Coffee</div><div class="mi-price">R 25</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Chai Latte</div><div class="mi-price">R 35</div></div></div>
+      </div>
+
+      <div class="menu-cat-title" style="font-size:1.5rem">Soft Drinks</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Buddy (Coke/Fanta/Sprite/Crème Soda)</div><div class="mi-price">R 19</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">2 Litre Colddrink</div><div class="mi-price">R 39</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Appletiser 330ml</div><div class="mi-price">R 29</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Grapetiser 330ml</div><div class="mi-price">R 29</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Still Water 500ml</div><div class="mi-price">R 13</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Still Water 1.5L</div><div class="mi-price">R 26</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Cappy Juice</div><div class="mi-price">R 25</div></div></div>
+        <div class="menu-item"><div class="mi-header"><div class="mi-name">Energy Drink</div><div class="mi-price">R 30</div></div></div>
+      </div>
+
+      <p style="text-align:center;font-size:0.65rem;letter-spacing:0.1em;color:var(--cream);opacity:0.32;padding:26px 40px">
+        ★ Strictly no alcohol served or allowed on the premises. Outside beverages are not permitted.
+      </p>
+    </div>
+
+    <p class="allergen-note">Allergens: Cow's milk · Nuts · Soya · Egg · Shellfish (crustaceans) · Fish · Cream &nbsp;|&nbsp; All products and prices subject to change without notice.</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="gallery-track">
+      <div class="gallery-card"><img data-src="images/DSCF5801.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF5817.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF5847.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF5860.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF5898.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF5924.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF5935.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF5947.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF5993.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6036.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6048.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6091.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6109.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6132.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6149.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6239.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6249.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6296.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6337.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6396.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6464.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+      <div class="gallery-card"><img data-src="images/DSCF6515.jpg" src="" loading="lazy" decoding="async" alt="Lazeez Foods gallery image"></div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="info-strip" id="info">
     <div class="info-card">
+      <a href="https://maps.app.goo.gl/s5Pqvpo5Aerh6bhk6" target="_blank" class="map-icon">📍</a>
+      <div class="info-title">Find Us</div>
+      <a href="https://maps.app.goo.gl/s5Pqvpo5Aerh6bhk6" target="_blank" class="map-link">153 Main Rd, Malvern<br>Durban, 4055<br>KwaZulu-Natal, South Africa</a>
+    </div>
 
-    <details class="hours-dropdown" open>
-      <summary>
-        <span class="info-icon">🕰️</span>
-        <span class="info-title">Hours &amp; Service</span>
-      </summary>
+    <div class="info-card">
+      <details class="hours-dropdown" open>
+        <summary>
+          <span class="info-icon">🕰️</span>
+          <span class="info-title">Hours &amp; Service</span>
+        </summary>
 
-      <div class="hours-list">
-        <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
-        <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
-        <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
-        <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
-        <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
-        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
-        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
+        <div class="hours-list">
+          <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">9:30 AM – 8:30 PM</span></div>
 
-        <p class="hours-note">Public holiday hours might differ.</p>
+          <p class="hours-note">Public holiday hours might differ.</p>
+        </div>
+      </details>
+
+      <div class="hours-row"><span class="hours-day">Dine In</span><span class="hours-time">✓ Available</span></div>
+      <div class="hours-row"><span class="hours-day">Take Away</span><span class="hours-time">✓ Available</span></div>
+      <div class="hours-row"><span class="hours-day">Delivery</span><span class="hours-time">✓ Available</span></div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">⭐</div>
+      <div class="info-title">Ratings</div>
+      <div class="hours-row"><span class="hours-day">Halaal</span><span class="hours-time" style="color:#4CAF50">✓ Strictly Certified</span></div>
+      <div class="hours-row"><span class="hours-day">Vegan Options</span><span class="hours-time" style="color:#4CAF50">✓ Available</span></div>
+    </div>
+  </section>
+
+  <!-- CATERING -->
+  <section class="catering" id="catering">
+    <p class="section-label">For Groups &amp; Events</p>
+    <h2 class="section-title">We <em>Cater</em> for You</h2>
+    <p style="font-size:0.78rem;opacity:0.48;margin-top:14px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.9">Weddings, corporate functions, family celebrations and more. T&amp;Cs apply. Enquire within.</p>
+    <div class="catering-grid">
+      <div class="catering-item">Mutton &amp; Chicken Biryani</div>
+      <div class="catering-item">Pulao (Chicken &amp; Mutton)</div>
+      <div class="catering-item">Mutton / Chicken / Veg Curries</div>
+      <div class="catering-item">Tikka Chicken (Full / Quarters)</div>
+      <div class="catering-item">Mixed Grills</div>
+      <div class="catering-item">Chowmein / Fried Rice</div>
+      <div class="catering-item">Rotis / Naan</div>
+      <div class="catering-item">Desserts</div>
+    </div>
+    <p style="margin-top:32px;font-size:0.7rem;opacity:0.38;letter-spacing:0.1em">Call <strong style="color:var(--gold);opacity:1">031 463 1069</strong> to discuss your event</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-name">Lazeez Foods</div>
+        <div class="footer-slogan">…where spices tell stories</div>
+        <p class="footer-desc">Strictly Halaal family restaurant &amp; take-away. Authentic Indian cuisine in the heart of Malvern, Durban.</p>
       </div>
-    </details>
 
-    <!-- SERVICES (always visible) -->
-    <div class="hours-row"><span class="hours-day">Dine In</span><span class="hours-time">✓ Available</span></div>
-    <div class="hours-row"><span class="hours-day">Take Away</span><span class="hours-time">✓ Available</span></div>
-    <div class="hours-row"><span class="hours-day">Delivery</span><span class="hours-time">✓ Available</span></div>
-
-  </div>
-  <div class="info-card">
-    <div class="info-icon">⭐</div>
-    <div class="info-title">Ratings</div>
-    <!-- <div class="hours-row"><span class="hours-day">Google</span><span class="hours-time">4,187 Reviews</span></div>
-    <div class="hours-row"><span class="hours-day">Uber Eats</span><span class="hours-time">4.3/5 · 200+ Reviews</span></div>
-    <div class="hours-row"><span class="hours-day">Facebook</span><span class="hours-time">5/5</span></div> -->
-    <div class="hours-row"><span class="hours-day">Halaal</span><span class="hours-time" style="color:#4CAF50">✓ Strictly Certified</span></div>
-    <div class="hours-row"><span class="hours-day">Vegan Options</span><span class="hours-time" style="color:#4CAF50">✓ Available</span></div>
-  </div>
-</section>
-
-<!-- CATERING -->
-<section class="catering" id="catering">
-  <p class="section-label">For Groups &amp; Events</p>
-  <h2 class="section-title">We <em>Cater</em> for You</h2>
-  <p style="font-size:0.78rem;opacity:0.48;margin-top:14px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.9">Weddings, corporate functions, family celebrations and more. T&amp;Cs apply. Enquire within.</p>
-  <div class="catering-grid">
-    <div class="catering-item">Mutton &amp; Chicken Biryani</div>
-    <div class="catering-item">Pulao (Chicken &amp; Mutton)</div>
-    <div class="catering-item">Mutton / Chicken / Veg Curries</div>
-    <div class="catering-item">Tikka Chicken (Full / Quarters)</div>
-    <div class="catering-item">Mixed Grills</div>
-    <div class="catering-item">Chowmein / Fried Rice</div>
-    <div class="catering-item">Rotis / Naan</div>
-    <div class="catering-item">Desserts</div>
-  </div>
-  <p style="margin-top:32px;font-size:0.7rem;opacity:0.38;letter-spacing:0.1em">Call <strong style="color:var(--gold);opacity:1">031 463 1069</strong> to discuss your event</p>
-</section>
-
-<!-- RESERVATION -->
-<!-- <section class="reservation" id="reserve">
-  <p class="section-label">Book a Table</p>
-  <h2 class="section-title">Reserve Your <em>Spot</em></h2>
-  <p style="font-size:0.76rem;opacity:0.42;margin-top:12px;line-height:1.9">Walk-ins always welcome! For larger groups call <strong style="color:var(--gold);opacity:1">031 463 1069</strong></p>
-  <div class="res-form">
-    <div class="form-row">
-      <div><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Priya"></div>
-      <div><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Naidoo"></div>
-    </div>
-    <div class="form-row">
-      <div><label class="form-label">Phone</label><input class="form-input" type="tel" placeholder="0XX XXX XXXX"></div>
-      <div><label class="form-label">Email</label><input class="form-input" type="email" placeholder="you@email.com"></div>
-    </div>
-    <div class="form-row">
-      <div><label class="form-label">Date</label><input class="form-input" type="date"></div>
-      <div><label class="form-label">Time</label>
-        <select class="form-input"><option>9:30 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option><option>7:00 PM</option><option>8:00 PM</option></select>
+      <div>
+        <div class="footer-col-title">Our Menu</div>
+        <ul class="footer-links">
+          <li><a href="#menu">Breakfast</a></li>
+          <li><a href="#menu">Street Food</a></li>
+          <li><a href="#menu">Curries</a></li>
+          <li><a href="#menu">Biryani</a></li>
+          <li><a href="#menu">Open Fire Grills</a></li>
+          <li><a href="#menu">Drinks &amp; Desserts</a></li>
+        </ul>
       </div>
-    </div>
-    <div><label class="form-label">Guests</label><select class="form-input"><option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6+ (Call Us)</option></select></div>
-    <div><label class="form-label">Special Requests</label><input class="form-input" type="text" placeholder="Dietary needs, occasion, accessibility..."></div>
-    <button class="form-submit" onclick="alert('Thank you! We\'ll confirm your booking shortly.\nFor immediate assistance call 031 463 1069.')">Request Reservation</button>
-  </div>
-</section> -->
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo-name">Lazeez Foods</div>
-      <div class="footer-slogan">…where spices tell stories</div>
-      <p class="footer-desc">Strictly Halaal family restaurant &amp; take-away. Authentic Indian cuisine in the heart of Malvern, Durban.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Our Menu</div>
-      <ul class="footer-links">
-        <li><a href="#menu">Breakfast</a></li>
-        <li><a href="#menu">Street Food</a></li>
-        <li><a href="#menu">Curries</a></li>
-        <li><a href="#menu">Biryani</a></li>
-        <li><a href="#menu">Open Fire Grills</a></li>
-        <li><a href="#menu">Drinks &amp; Desserts</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Navigate</div>
-      <ul class="footer-links">
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#catering">Catering</a></li>
-        <!-- <li><a href="#reserve">Reservations</a></li> -->
-        <!-- <li><a href="https://www.ubereats.com" target="_blank">Order on Uber Eats</a></li> -->
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contact</div>
-        <div class="footer-addr">153 Main Rd, Malvern<br>Durban, 4055<br>KwaZulu-Natal<br><br>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#catering">Catering</a></li>
+        </ul>
+      </div>
 
-        <a href="https://share.google/qbNTFqs2nmSUBr66Y" target="_blank" style="color:var(--gold);opacity:1;text-decoration:none;">
-          031 463 1069
-        </a><br>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-addr">
+          153 Main Rd, Malvern<br>
+          Durban, 4055<br>
+          KwaZulu-Natal<br><br>
 
-        <a href="https://wa.me/27723480786" target="_blank" style="color:var(--gold);opacity:1;text-decoration:none;">
-          WhatsApp: 072 348 0786
-        </a><br>
+          <a href="https://share.google/qbNTFqs2nmSUBr66Y" target="_blank" style="color:var(--gold);opacity:1;text-decoration:none;">
+            031 463 1069
+          </a><br>
 
-        Opens 9:30 AM Daily
+          <a href="https://wa.me/27723480786" target="_blank" style="color:var(--gold);opacity:1;text-decoration:none;">
+            WhatsApp: 072 348 0786
+          </a><br>
+
+          Opens 9:30 AM Daily
+        </div>
       </div>
     </div>
-  </div>
-  <div class="footer-note">All products and prices are subject to change/omission without notice. Lazeez Foods is strictly Halaal. Products purchased from outside will not be allowed within our premises. Corkage charges apply (enquire within). We also cater for groups.</div>
-  <div class="footer-bottom">
-    <span>© 2026 Lazeez Foods Family Restaurant &amp; Take-Away. All rights reserved.</span>
-    <span>Strictly Halaal · Malvern, Durban</span>
-  </div>
-</footer>
 
-<script src="script.js"></script>
+    <div class="footer-note">
+      All products and prices are subject to change/omission without notice. Lazeez Foods is strictly Halaal. Products purchased from outside will not be allowed within our premises. Corkage charges apply (enquire within). We also cater for groups.
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Lazeez Foods Family Restaurant &amp; Take-Away. All rights reserved.</span>
+      <span>Strictly Halaal · Malvern, Durban</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -57,3 +57,18 @@ document.addEventListener('visibilitychange', () => {
       document.hidden ? 'paused' : 'running';
   }
 });
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', function () {
+    navLinks.classList.toggle('show');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('show');
+    });
+  });
+}
