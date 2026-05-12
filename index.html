@@ -122,12 +122,20 @@
     </ul>
 
     <div class="nav-contact">
+      
+      <!-- ✅ ADD CART BUTTON HERE -->
+      <button id="cartToggle" class="cart-toggle">
+        🛒 (<span id="cartCount">0</span>)
+      </button>
+
       <a href="https://wa.me/27723480786" target="_blank" class="nav-cta">
         WhatsApp: 072 348 0786
       </a>
+
       <a href="https://share.google/qbNTFqs2nmSUBr66Y" target="_blank" class="nav-cta">
         031 463 1069
       </a>
+
     </div>
   </nav>
 
@@ -216,6 +224,7 @@
       <p class="section-label">Our Full Menu</p>
       <h2 class="section-title">Explore the <em>Flavours</em></h2>
       <div class="cat-tabs">
+        <button class="cat-tab" onclick="showTab('specials',this)">Weekday Specials</button>
         <button class="cat-tab active" onclick="showTab('breakfast',this)">Breakfast</button>
         <button class="cat-tab" onclick="showTab('street',this)">Street Food</button>
         <button class="cat-tab" onclick="showTab('curries',this)">Curries</button>
@@ -223,6 +232,19 @@
         <button class="cat-tab" onclick="showTab('grills',this)">Open Fire Grills</button>
         <button class="cat-tab" onclick="showTab('chinese',this)">Chinese</button>
         <button class="cat-tab" onclick="showTab('drinks',this)">Drinks &amp; Desserts</button>
+      </div>
+    </div>
+
+    <!-- WEEKDAY SPECIALS -->
+    <div class="menu-panel" id="tab-specials">
+      <div class="menu-cat-title">Weekday Specials</div>
+      <p class="menu-cat-sub">Available on the listed weekday only</p>
+      <div class="menu-grid">
+        <div class="menu-item weekday-special" data-special-day="Monday"><div class="mi-header"><div class="mi-name">Chicken Chowmein</div><div class="mi-price">R 79</div></div><div class="mi-desc">Monday special only</div><div class="mi-tags"><span class="mi-tag new">Monday Only</span></div></div>
+        <div class="menu-item weekday-special" data-special-day="Tuesday"><div class="mi-header"><div class="mi-name">Veg Biryani</div><div class="mi-price">R 69</div></div><div class="mi-desc">Includes soji, salad and sourmilk</div><div class="mi-tags"><span class="mi-tag veg">Vegetarian</span><span class="mi-tag new">Tuesday Only</span></div></div>
+        <div class="menu-item weekday-special" data-special-day="Wednesday"><div class="mi-header"><div class="mi-name">Durban Style Mutton Bunny</div><div class="mi-price">R 99</div></div><div class="mi-desc">Wednesday special only</div><div class="mi-tags"><span class="mi-tag new">Wednesday Only</span></div></div>
+        <div class="menu-item weekday-special" data-special-day="Thursday"><div class="mi-header"><div class="mi-name">2 x Cheese Burger (Mutton) &amp; Chips</div><div class="mi-price">R 69</div></div><div class="mi-desc">Thursday special only</div><div class="mi-tags"><span class="mi-tag new">Thursday Only</span></div></div>
+        <div class="menu-item weekday-special" data-special-day="Friday"><div class="mi-header"><div class="mi-name">Mutton Biryani</div><div class="mi-price">R 120</div></div><div class="mi-desc">Includes salad and dhall top-up</div><div class="mi-tags"><span class="mi-tag new">Friday Only</span></div></div>
       </div>
     </div>
 
@@ -324,20 +346,87 @@
 
       <div class="menu-cat-title">Bunny Chows</div>
       <p class="menu-cat-sub">Served with salad · Q = Quarter · H = Half · F = Full</p>
+      <p class="bunny-help-text">Tap any price below to add that Bunny Chow size to your cart</p>
+
       <div class="menu-grid">
         <div class="menu-item bunny-big">
           <table class="bunny-table">
-            <tr><th>Item</th><th>Q</th><th>H</th><th>F</th></tr>
-            <tr><td>Mutton</td><td>110</td><td>190</td><td>275</td></tr>
-            <tr><td>Chicken</td><td>95</td><td>120</td><td>180</td></tr>
-            <tr class="vrow"><td>Beans (Broad/Sugar)</td><td>49</td><td>90</td><td>155</td></tr>
-            <tr class="vrow"><td>Mixed Veg</td><td>49</td><td>90</td><td>155</td></tr>
-            <tr><td>Prawn</td><td>145</td><td>170</td><td>240</td></tr>
-            <tr><td>Prawn &amp; Chicken</td><td>145</td><td>165</td><td>235</td></tr>
-            <tr><td>Butter Chicken</td><td>110</td><td>165</td><td>225</td></tr>
-            <tr><td>Kebaab</td><td>110</td><td>185</td><td>265</td></tr>
-            <tr class="vrow"><td>Paneer Tikka Masala</td><td>110</td><td>165</td><td>215</td></tr>
-            <tr class="vrow"><td>Paneer &amp; Peas</td><td>95</td><td>120</td><td>180</td></tr>
+            <tr>
+              <th>Item</th>
+              <th>Q</th>
+              <th>H</th>
+              <th>F</th>
+            </tr>
+
+            <tr>
+              <td>Mutton</td>
+              <td class="bunny-cell" data-name="Mutton Bunny Chow - Quarter" data-price="110">R110</td>
+              <td class="bunny-cell" data-name="Mutton Bunny Chow - Half" data-price="190">R190</td>
+              <td class="bunny-cell" data-name="Mutton Bunny Chow - Full" data-price="275">R275</td>
+            </tr>
+
+            <tr>
+              <td>Chicken</td>
+              <td class="bunny-cell" data-name="Chicken Bunny Chow - Quarter" data-price="95">R95</td>
+              <td class="bunny-cell" data-name="Chicken Bunny Chow - Half" data-price="120">R120</td>
+              <td class="bunny-cell" data-name="Chicken Bunny Chow - Full" data-price="180">R180</td>
+            </tr>
+
+            <tr class="vrow">
+              <td>Beans (Broad/Sugar)</td>
+              <td class="bunny-cell" data-name="Beans Bunny Chow - Quarter" data-price="49">R49</td>
+              <td class="bunny-cell" data-name="Beans Bunny Chow - Half" data-price="90">R90</td>
+              <td class="bunny-cell" data-name="Beans Bunny Chow - Full" data-price="155">R155</td>
+            </tr>
+
+            <tr class="vrow">
+              <td>Mixed Veg</td>
+              <td class="bunny-cell" data-name="Mixed Veg Bunny Chow - Quarter" data-price="49">R49</td>
+              <td class="bunny-cell" data-name="Mixed Veg Bunny Chow - Half" data-price="90">R90</td>
+              <td class="bunny-cell" data-name="Mixed Veg Bunny Chow - Full" data-price="155">R155</td>
+            </tr>
+
+            <tr>
+              <td>Prawn</td>
+              <td class="bunny-cell" data-name="Prawn Bunny Chow - Quarter" data-price="145">R145</td>
+              <td class="bunny-cell" data-name="Prawn Bunny Chow - Half" data-price="170">R170</td>
+              <td class="bunny-cell" data-name="Prawn Bunny Chow - Full" data-price="240">R240</td>
+            </tr>
+
+            <tr>
+              <td>Prawn &amp; Chicken</td>
+              <td class="bunny-cell" data-name="Prawn &amp; Chicken Bunny Chow - Quarter" data-price="145">R145</td>
+              <td class="bunny-cell" data-name="Prawn &amp; Chicken Bunny Chow - Half" data-price="165">R165</td>
+              <td class="bunny-cell" data-name="Prawn &amp; Chicken Bunny Chow - Full" data-price="235">R235</td>
+            </tr>
+
+            <tr>
+              <td>Butter Chicken</td>
+              <td class="bunny-cell" data-name="Butter Chicken Bunny Chow - Quarter" data-price="110">R110</td>
+              <td class="bunny-cell" data-name="Butter Chicken Bunny Chow - Half" data-price="165">R165</td>
+              <td class="bunny-cell" data-name="Butter Chicken Bunny Chow - Full" data-price="225">R225</td>
+            </tr>
+
+            <tr>
+              <td>Kebaab</td>
+              <td class="bunny-cell" data-name="Kebaab Bunny Chow - Quarter" data-price="110">R110</td>
+              <td class="bunny-cell" data-name="Kebaab Bunny Chow - Half" data-price="185">R185</td>
+              <td class="bunny-cell" data-name="Kebaab Bunny Chow - Full" data-price="265">R265</td>
+            </tr>
+
+            <tr class="vrow">
+              <td>Paneer Tikka Masala</td>
+              <td class="bunny-cell" data-name="Paneer Tikka Masala Bunny Chow - Quarter" data-price="110">R110</td>
+              <td class="bunny-cell" data-name="Paneer Tikka Masala Bunny Chow - Half" data-price="165">R165</td>
+              <td class="bunny-cell" data-name="Paneer Tikka Masala Bunny Chow - Full" data-price="215">R215</td>
+            </tr>
+
+            <tr class="vrow">
+              <td>Paneer &amp; Peas</td>
+              <td class="bunny-cell" data-name="Paneer &amp; Peas Bunny Chow - Quarter" data-price="95">R95</td>
+              <td class="bunny-cell" data-name="Paneer &amp; Peas Bunny Chow - Half" data-price="120">R120</td>
+              <td class="bunny-cell" data-name="Paneer &amp; Peas Bunny Chow - Full" data-price="180">R180</td>
+            </tr>
           </table>
         </div>
       </div>
@@ -761,6 +850,42 @@
       <span>Strictly Halaal · Malvern, Durban</span>
     </div>
   </footer>
+
+   <!-- ✅ CART PANEL (ADD HERE) -->
+  <div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart">×</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-footer">
+      <div>Total: R<span id="cartTotal">0</span></div>
+      <button id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+
+  <div id="checkoutModal" class="checkout-modal">
+    <div class="checkout-box">
+      <h3>Checkout</h3>
+
+      <input id="customerName" placeholder="Name" required>
+      <input id="customerSurname" placeholder="Surname (optional)">
+      <input id="customerPhone" placeholder="Phone Number" required>
+
+      <select id="orderType" required>
+        <option value="Collection">Collection</option>
+        <option value="Delivery">Delivery</option>
+      </select>
+
+      <input id="customerHouseNumber" placeholder="House Number">
+      <textarea id="customerAddress" placeholder="Address"></textarea>
+      <textarea id="customerNotes" placeholder="Notes"></textarea>
+
+      <button id="approveOrder">Send to WhatsApp</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
