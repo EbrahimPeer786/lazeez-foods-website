@@ -91,6 +91,10 @@ if (menuToggle && navLinks) {
   });
 }
 
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+  link.rel = 'noopener noreferrer';
+});
+
 // ============================
 // CART SYSTEM
 // ============================
@@ -181,6 +185,11 @@ function escapeHtml(value) {
     '"': '&quot;',
     "'": '&#039;'
   }[char]));
+}
+
+function openExternalUrl(url) {
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+  if (newWindow) newWindow.opener = null;
 }
 
 function getItemCategory(item) {
@@ -547,7 +556,7 @@ function submitOrder(event) {
 
   waitingForWhatsAppReturn = true;
   canAskToClearCart = false;
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
+  openExternalUrl(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`);
   closeCheckout();
 
   setTimeout(() => {
